@@ -35,8 +35,24 @@ function index(req, res) {
   })
 }
 
+function showPost(req, res) {
+  console.log(req.params.id)
+  Post.findById(req.params.id)
+  .then(post => {
+    res.render('posts/show', {
+      title: 'Post Details',
+      post
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/posts')
+  })
+}
+
 export {
 newPost as new,
 createPost as create,
-index
+index,
+showPost as show,
 }

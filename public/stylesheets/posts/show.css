@@ -1,0 +1,9 @@
+section {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 16px;
+}
+
+section div:nth-child(even) {
+  font-weight: bold;
+}
