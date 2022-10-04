@@ -1,0 +1,17 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <% if (user) { %>
+    <form id="new-form" action="/posts" method="post">
+      <label for="city-input">City:</label>
+      <input type="text" name="city" id="city-input">
+      
+      <label for="content-input">Description:</label>
+      <input type="text" name="content" id="content-input" maxlength="700" placeholder="Where and When should I visit?">
+      <button type="submit">Post</button>
+    </form>
+  <% } %>
+
+<%- include("../partials/footer") %>
