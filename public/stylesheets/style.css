@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -13,9 +15,9 @@ html {
 
 body {
   background-color: #1a1a1a;
-  color: #f6f6f6;
+  color: #f6f4e8;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+  font-family: 'Open Sans', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
 }
@@ -41,7 +43,7 @@ main {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 42px;
 }
 
 h2 {
@@ -69,7 +71,7 @@ section {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 pre {
