@@ -8,7 +8,7 @@ function newPost(req, res) {
 }
 
 function createPost(req, res) {
-  console.log(req.body)
+  console.log(req.user)
   req.body.owner = req.user.profile._id
   Post.create(req.body)
   .then(post => {
@@ -26,7 +26,7 @@ function index(req, res) {
   .then(posts => {
     res.render('posts/index', {
       posts,
-      title: 'Feed'
+      title: 'Feed',
     })
   })
   .catch(error => {

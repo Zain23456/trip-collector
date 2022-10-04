@@ -3,12 +3,13 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>The Feed</h1>
+  <h1>All Posts</h1>
   <table id="list">
     <thead>
       <tr>
         <th>City</th>
         <th>Content</th>
+        <th>User</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= post.city %></td>
         <td><%= post.content %></td>
+        <td><%= user.profile.name %></td>
       </tr>
       <% }) %>
     </tbody>
