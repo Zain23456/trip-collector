@@ -8,7 +8,7 @@ function newPost(req, res) {
 }
 
 function createPost(req, res) {
-  console.log(req.user)
+  
   req.body.owner = req.user.profile._id
   Post.create(req.body)
   .then(post => {
@@ -31,7 +31,7 @@ function index(req, res) {
   })
   .catch(error => {
     console.log(error)
-    res.redirect('/posts')
+    res.redirect('/')
   })
 }
 
@@ -82,6 +82,24 @@ function updatePost(req, res) {
   })
 }
 
+function deletePost(req, res) {
+  Post.findById(req.params.id)
+  .then(post => {
+    if (post.owner.equals(req.user.profile._id)) {
+      post.delete()
+      .then(() => {
+        res.redirect('/posts')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
 newPost as new,
 createPost as create,
@@ -89,4 +107,5 @@ index,
 showPost as show,
 editPost as edit,
 updatePost as update,
+deletePost as delete,
 }

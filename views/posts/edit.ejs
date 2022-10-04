@@ -3,7 +3,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <% if (user) { %>
+  <% if (post.owner.equals(user?.profile._id)) { %>
     <form action="/posts/<%= post._id %>?_method=PUT" method="post">
       <label for="city-input">City:</label>
       <input type="text" name="city" id="city-input">
