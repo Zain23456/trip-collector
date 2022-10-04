@@ -50,9 +50,43 @@ function showPost(req, res) {
   })
 }
 
+function editPost(req, res) {
+  Post.findById(req.params.id)
+  .then(post => {
+    res.render('posts/edit', {
+      post,
+      title: "Edit Post"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function updatePost(req, res) {
+  Post.findByIdAndUpdate(req.params.id, req.body)
+  .then(post => {
+    if(post.owner.equals(req.user.profile._id)) {
+      post.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/posts/${post._id}`)
+      })
+    } else {
+      throw new Error ('USER is UNAUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
 newPost as new,
 createPost as create,
 index,
 showPost as show,
+editPost as edit,
+updatePost as update,
 }
