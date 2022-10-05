@@ -8,11 +8,12 @@
 
       <div class="mb-3">
         <label for="city-input" class="form-label">City</label>
-        <input type="text" name="city" class="form-control" id="city-input" placeholder="location">
+        <input type="text" name="city" class="form-control" id="city-input" placeholder="location" value="<%= post.city %>">
       </div>
+
       <div class="mb-3">
         <label for="content-input" class="form-label">Description</label>
-        <textarea name="content" class="form-control" id="content-input" rows="3" placeholder="What should users do here? When should they go?"></textarea>
+        <textarea name="content" class="form-control" id="content-input" rows="3" ><%= post.content %></textarea>
       </div>
 
       <button type="submit" class="btn btn-light">Save Post</button>

@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Post } from '../models/post.js'
 
 function index(req, res) {
   console.log("PROFILES")
@@ -23,11 +24,17 @@ function showProfile (req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     const isSelf = profile._id.equals(req.user.profile._id)
-    res.render('profiles/show', {
-    title: `${profile.name}'s profile`,
-    profile,
-    isSelf
+    Post.find({owner:profile._id})
+    .then(posts => {
+      console.log(posts)
+      res.render('profiles/show', {
+        title: `${profile.name}'s profile`,
+        profile,
+        isSelf,
+        posts
+        })
     })
+    
   })
   .catch((err) => {
     console.log(err)

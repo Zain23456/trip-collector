@@ -100,3 +100,11 @@ nav > a {
 .profile-avatar {
   margin-top: 50px;
 }
+
+#edit-button {
+  box-shadow: 2px 0 2px 2px #bbb;
+}
+
+#welcome-message {
+  border: 2px solid #CFF5FF;
+}

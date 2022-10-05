@@ -3,20 +3,16 @@
 
 <main>
   <h1>welcome, <%= user ? user.profile.name : "traveler" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  
 
-  <div>
+  <div id="welcome-message">
     <p>
-      Share your favorite places
+      Share your thoughts on where people should visit in the city of your choice. What are your go to places? Where would you go?
     </p>
   </div>
+
+  
+
 </main>
 
 <%- include('./partials/footer') %>

@@ -10,6 +10,19 @@
     >
   </div>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  
+  <section>
+    <% posts.forEach(post => { %>
+      <div>City: </div>
+      <div>
+        <%= post.city %> 
+      </div>
+      <div>Description: </div>
+      <div>
+        <%= post.content %> 
+      </div>
+    <% }) %> 
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
