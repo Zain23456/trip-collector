@@ -5,12 +5,17 @@
   <h1><%= title %></h1>
   <% if (user) { %>
     <form id="new-form" action="/posts" method="post">
-      <label for="city-input">City:</label>
-      <input type="text" name="city" id="city-input">
+
+      <div class="mb-3">
+        <label for="city-input" class="form-label">City</label>
+        <input type="text" name="city" class="form-control" id="city-input" placeholder="location">
+      </div>
+      <div class="mb-3">
+        <label for="content-input" class="form-label">Description</label>
+        <textarea name="content" class="form-control" id="content-input" rows="3" placeholder="What should users do here? When should they go?"></textarea>
+      </div>
       
-      <label for="content-input">Description:</label>
-      <input type="text" name="content" id="content-input" maxlength="400" placeholder="Where and When should I visit?">
-      <button type="submit">Post</button>
+      <button type="submit" class="btn btn-light">Post</button>
     </form>
   <% } %>
 

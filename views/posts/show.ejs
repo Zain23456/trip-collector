@@ -20,7 +20,7 @@
     <% if (post.owner.equals(user?.profile._id)) { %>
       <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
         <a href="/posts/<%= post._id %>/edit">
-          <button class="btn" type="submit">Delete</button>
+          <button type="submit">Delete</button>
         </a>
       </form>
     <% } %>

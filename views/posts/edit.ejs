@@ -5,12 +5,17 @@
   <h1><%= title %></h1>
   <% if (post.owner.equals(user?.profile._id)) { %>
     <form action="/posts/<%= post._id %>?_method=PUT" method="post">
-      <label for="city-input">City:</label>
-      <input type="text" name="city" id="city-input">
-      
-      <label for="content-input">Description:</label>
-      <input type="text" name="content" id="content-input" maxlength="700" placeholder="Where and When should I visit?">
-      <button type="submit">Save Post</button>
+
+      <div class="mb-3">
+        <label for="city-input" class="form-label">City</label>
+        <input type="text" name="city" class="form-control" id="city-input" placeholder="location">
+      </div>
+      <div class="mb-3">
+        <label for="content-input" class="form-label">Description</label>
+        <textarea name="content" class="form-control" id="content-input" rows="3" placeholder="What should users do here? When should they go?"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-light">Save Post</button>
     </form>
   <% } %>
 
