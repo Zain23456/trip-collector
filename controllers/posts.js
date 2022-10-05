@@ -23,6 +23,7 @@ function createPost(req, res) {
 
 function index(req, res) {
   Post.find({})
+  .populate('owner')
   .then(posts => {
     res.render('posts/index', {
       posts,
@@ -67,8 +68,7 @@ function editPost(req, res) {
 function updatePost(req, res) {
   Post.findByIdAndUpdate(req.params.id, req.body)
   .then(post => {
-    if(post.owner.equals(req.user.profile._id)) {
-      post.updateOne(req.body)
+    if(post.owner.equals(req.user.profile._id)) {post.updateOne(req.body)
       .then(() => {
         res.redirect(`/posts/${post._id}`)
       })

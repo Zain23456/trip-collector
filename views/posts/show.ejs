@@ -14,10 +14,10 @@
     <div>
       <%= post.content %> 
     </div>
-    <a href="/posts/<%= post._id %>/edit">
-      <button id="edit-button" class='btn btn-light'>Edit Post</button>
-    </a>
     <% if (post.owner.equals(user?.profile._id)) { %>
+      <a href="/posts/<%= post._id %>/edit">
+      <button id="edit-button" class='btn btn-light'>Edit Post</button>
+      </a>
       <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
         <a href="/posts/<%= post._id %>/edit">
           <button type="submit" class="btn btn-outline-danger">Delete</button>

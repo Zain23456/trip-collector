@@ -9,7 +9,7 @@
       <tr>
         <th>City</th>
         <th>Content</th>
-        <th>User</th>
+        <th>Creater</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= post.city %></td>
         <td><%= post.content %></td>
-        <td><%= user.profile.name %></td>
+        <td><%= post.owner.name %></td>
         <td><a href="/posts/<%= post._id %>">Details</a></td>
       </tr>
       <% }) %>
