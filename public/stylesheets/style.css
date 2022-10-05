@@ -36,6 +36,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 2%;
 }
 
 .right {
@@ -107,4 +108,13 @@ nav > a {
 
 #welcome-message {
   border: 2px solid #CFF5FF;
+}
+
+#welcome-message > p {
+  padding: 5px;
+  margin-top: 3rem;
+}
+
+#welcome-h1 {
+  margin-top: 3rem;
 }
