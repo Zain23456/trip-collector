@@ -31,16 +31,17 @@ nav {
   min-height: 60px;
 }
 
+#trip-logo {
+  width: 32px;
+  height: 32px;
+}
+
 main {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 2%;
-}
-
-.right {
-  margin-left: auto;
 }
 
 h1 {
@@ -118,7 +119,7 @@ nav > a {
 }
 
 #welcome-h1 {
-  margin-top: 3rem;
+  margin-top: 1rem;
   border: 2px solid #CFF5FF;
 }
 
@@ -131,5 +132,5 @@ nav > a {
 footer > p {
   text-align: center;
   font-size: 14px;
-  margin: 0 auto;
+  margin-bottom: 0px;
 }

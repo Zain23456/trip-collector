@@ -39,10 +39,38 @@ function index(req, res) {
 function showPost(req, res) {
   console.log(req.params.id)
   Post.findById(req.params.id)
+  .populate([{
+    path: 'owner'
+  }, {
+    path: 'comments',
+    populate: { path: 'owner'}
+  }
+])
   .then(post => {
     res.render('posts/show', {
       title: 'Post Details',
       post
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/posts')
+  })
+}
+
+function createComment(req, res) {
+  Post.findById(req.params.id)
+  .populate('owner')
+  .then(post => {
+    req.body.owner = req.user.profile._id
+    post.comments.push(req.body)
+    post.save()
+    .then(() => {
+      res.redirect('/posts')
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/posts')
     })
   })
   .catch(error => {
@@ -108,4 +136,5 @@ showPost as show,
 editPost as edit,
 updatePost as update,
 deletePost as delete,
+createComment
 }

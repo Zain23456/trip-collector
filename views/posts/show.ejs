@@ -23,7 +23,43 @@
           <button type="submit" class="btn btn-outline-danger">Delete</button>
         </a>
       </form>
-    <% } %>
+      <% } %>
+    </section>
+    
+    <section>
+      <form action="/posts/<%= post._id %>/comments" method="post">
+        
+        <div class="mb-3">
+          <label for="content-input" class="form-label">Post a Comment</label>
+          <textarea name="content" class="form-control" id="content-input" rows="3" placeholder="Share your thoughts? Was this helpful? Did you go?"></textarea>
+        </div>
+        
+        <button type="submit" id="edit-button" class="btn btn-light">Add Comment</button>
+        
+      </form>
+
+  </section>
+
+  <section>
+
+    <h2>Comments</h2>
+  <table class="table table-striped" id="list">
+    <thead>
+      <tr>
+        <th>Creater</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% post.comments.forEach((comment) => { %>
+      <tr>
+        <td><%= comment.owner.name %></td>
+        <td><%= comment.content %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
   </section>
 
 <%- include("../partials/footer") %>
