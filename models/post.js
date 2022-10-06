@@ -14,7 +14,6 @@ const postSchema = new Schema({
   content: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   comments: [commentSchema],
-
 })
 
 const Post = mongoose.model('Post', postSchema)

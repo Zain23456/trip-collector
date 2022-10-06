@@ -33,7 +33,6 @@ function showProfile (req, res) {
         posts
         })
     })
-    
   })
   .catch((err) => {
     console.log(err)

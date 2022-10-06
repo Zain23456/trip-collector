@@ -52,10 +52,20 @@
     </thead>
     <tbody>
       <% post.comments.forEach((comment) => { %>
-      <tr>
-        <td><%= comment.owner.name %></td>
-        <td><%= comment.content %></td>
-      </tr>
+        <tr>
+          <td><%= comment.owner.name %></td>
+          <td><%= comment.content %></td>
+
+          <% if (comment.owner.equals(user?.profile._id)) { %>
+            <td>
+              <form action="/posts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <a href="/<%= post._id %>/comments/<%= comment._id %>">
+                  <button type="submit" class="btn btn-outline-danger">X</button>
+                </a>
+              </form>
+            </td>
+          <% } %> 
+        </tr>
       <% }) %>
     </tbody>
   </table>

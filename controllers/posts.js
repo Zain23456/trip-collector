@@ -8,7 +8,6 @@ function newPost(req, res) {
 }
 
 function createPost(req, res) {
-  
   req.body.owner = req.user.profile._id
   Post.create(req.body)
   .then(post => {
@@ -37,7 +36,6 @@ function index(req, res) {
 }
 
 function showPost(req, res) {
-  console.log(req.params.id)
   Post.findById(req.params.id)
   .populate([{
     path: 'owner'
@@ -87,8 +85,8 @@ function editPost(req, res) {
       title: "Edit Post"
     })
   })
-  .catch(err => {
-    console.log(err)
+  .catch(error => {
+    console.log(error)
     res.redirect('/')
   })
 }
@@ -128,6 +126,21 @@ function deletePost(req, res) {
   })
 }
 
+function deleteComment(req, res) {
+  Post.findById(req.params.id)
+  .then(post => {
+    post.comments.remove(req.params.commentId)
+    post.save()
+    .then(() => {
+      res.redirect(`/posts/${post._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
 newPost as new,
 createPost as create,
@@ -136,5 +149,6 @@ showPost as show,
 editPost as edit,
 updatePost as update,
 deletePost as delete,
-createComment
+createComment,
+deleteComment,
 }
