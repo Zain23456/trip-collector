@@ -16,9 +16,8 @@
       <% posts.forEach((post) => { %>
       <tr>
         <td><%= post.city %></td>
-        <td><%= post.content %></td>
+        <td><a href="/posts/<%= post._id %>"><%= post.content %></a></td>
         <td><%= post.owner.name %></td>
-        <td><a href="/posts/<%= post._id %>">Details</a></td>
       </tr>
       <% }) %>
     </tbody>

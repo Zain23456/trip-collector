@@ -27,7 +27,7 @@ nav {
   color: #1a1a1a;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 1%;
   min-height: 60px;
 }
 
@@ -113,8 +113,10 @@ nav > a {
 #welcome-message > p {
   padding: 5px;
   margin-top: 3rem;
+  border: 2px solid #CFF5FF;
 }
 
 #welcome-h1 {
   margin-top: 3rem;
+  border: 2px solid #CFF5FF;
 }

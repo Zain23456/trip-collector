@@ -26,7 +26,6 @@ function showProfile (req, res) {
     const isSelf = profile._id.equals(req.user.profile._id)
     Post.find({owner:profile._id})
     .then(posts => {
-      console.log(posts)
       res.render('profiles/show', {
         title: `${profile.name}'s profile`,
         profile,
