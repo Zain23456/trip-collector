@@ -4,19 +4,16 @@ html {
   box-sizing: border-box;
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
+*, 
+*::before,
 *::after {
-  /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: inherit;
 }
 
 body {
-  background-color: #FCFCD4;
-  color: #713800;
-  /* Use a system font, if none are available use any found sans-sarif font */
+  background-color: #ffeccc;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238c7357' fill-opacity='0.18' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  color: #00356F;
   font-family: 'Open Sans', system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
@@ -42,6 +39,10 @@ main {
   justify-content: center;
   flex-direction: column;
   padding: 2%;
+}
+
+.right {
+  margin-left: auto;
 }
 
 h1 {
@@ -73,12 +74,12 @@ section {
   padding: 50px;
 }
 
-a {
-  color: #00b7ff;
-}
-
 pre {
   font-size: 14px;
+}
+
+a {
+  color: #B7568F;
 }
 
 nav > a {
@@ -88,6 +89,7 @@ nav > a {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #00B7FF;
 }
 
 .btn {
@@ -108,19 +110,15 @@ nav > a {
   box-shadow: 2px 0 2px 2px #bbb;
 }
 
-#welcome-message {
-  border: 2px solid #CFF5FF;
-}
-
 #welcome-message > p {
   padding: 5px;
   margin-top: 1rem;
-  border: 2px solid #CFF5FF;
 }
 
 #welcome-h1 {
   margin-top: 1rem;
-  border: 2px solid #CFF5FF;
+  font-size: 46px;
+  font-family: 'Open Sans'
 }
 
 #landing-img {
@@ -139,10 +137,10 @@ nav > a {
   border-radius: 5px;
 }
 footer {
-  margin-top: 3rem;
+  margin-top: 8rem;
 }
 footer > p {
   text-align: center;
   font-size: 14px;
-  margin-bottom: 0px;
+  margin-bottom: auto;
 }
