@@ -18,10 +18,10 @@ Simply loggin with your google account and start posting about places you have b
 - EJS, CSS, Javascript, Mongoose, Express, MongoDB, Bootstrap, GoogleOAuth
 
 ## Next Steps
--Add functionally to veiw and sort page by city
--add search bar feature
--responsive design
+- Add functionally to veiw and sort page by city
+- add search bar feature
+- responsive design
 
 ## Credits
--Unsplash
--Google Fonts
+- Unsplash
+- Google Fonts
